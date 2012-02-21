@@ -21,13 +21,13 @@ class dotdeb::install {
                     cat dotdeb.gpg | apt-key add -",
         unless  => 'apt-key list | grep dotdeb',
         require => File['/etc/apt/sources.list.d/dotdeb.list'],
+        notify  => Exec['update-apt'];
     }
 
     exec {
         'update-apt':
         path    => '/bin:/usr/bin',
         command => 'apt-get update',
-        unless  => 'ls /usr/bin | grep dotdeb',
-        require => Exec['dotdeb-apt-key'],
+        require => Exec['dotdeb-apt-key'];
     }
 }
