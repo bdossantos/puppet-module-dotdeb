@@ -26,8 +26,9 @@ class dotdeb::install {
 
     exec {
         'update-apt':
-        path    => '/bin:/usr/bin',
-        command => 'apt-get update',
-        require => Exec['dotdeb-apt-key'];
+        path        => '/bin:/usr/bin',
+        command     => 'apt-get update',
+        require     => Exec['dotdeb-apt-key'],
+        refreshonly => true;
     }
 }
