@@ -17,6 +17,7 @@ class dotdeb::install {
     exec {
         'dotdeb-apt-key':
         path    => '/bin:/usr/bin',
+        cwd     => '/tmp',
         command => "wget ${dotdeb::key} -O dotdeb.gpg &&
                     cat dotdeb.gpg | apt-key add -",
         unless  => 'apt-key list | grep dotdeb',
