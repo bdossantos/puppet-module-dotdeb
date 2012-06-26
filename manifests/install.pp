@@ -1,9 +1,9 @@
 class dotdeb::install {
 
   file { '/etc/apt/sources.list.d':
-      ensure  => 'directory',
-      owner   => 'root',
-      group   => 'root';
+    ensure  => 'directory',
+    owner   => 'root',
+    group   => 'root';
   }
 
   file { '/etc/apt/sources.list.d/dotdeb.list':
