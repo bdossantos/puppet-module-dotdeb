@@ -8,14 +8,25 @@ Tested on Debian GNU/Linux 6.0 Squeeze with Puppet 2.6.
 
 Clone this repo to a dotdeb directory under your Puppet modules directory :
 
-    git clone git://github.com/Benjamin-Ds/puppet-module-dotdeb.git dotdeb
+```bash
+git clone git://github.com/Benjamin-Ds/puppet-module-dotdeb.git dotdeb
+```
 
 ## Usage
 
-    node nodename {
-        include dotdeb
-    }
+```puppet
+# node.pp
+node default {
+    include dotdeb
+}
+```
+
+```bash
+puppet apply /path/to/node.pp --modulepath /etc/puppet/modules --logdest console
+```
 
 Or
 
-    puppet apply -e "include dotdeb"
+```puppet
+puppet apply -e "include dotdeb"
+```
