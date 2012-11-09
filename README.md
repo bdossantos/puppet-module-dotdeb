@@ -27,6 +27,6 @@ puppet apply /path/to/node.pp --modulepath /etc/puppet/modules --logdest console
 
 Or
 
-```puppet
+```bash
 puppet apply -e "include dotdeb"
 ```
